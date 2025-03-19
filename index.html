@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Enter Password</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('background.jpg') no-repeat center center/cover;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .password-container {
+            position: relative;
+            background: rgba(58, 6, 226, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        @supports not (backdrop-filter: blur(10px)) {
+            .password-container {
+                background: rgba(255, 255, 255, 0.8); /* ใช้พื้นหลังสีขาวขุ่นแทน */
+            }
+        }
+
+        h2,h3 ,p{
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(145deg, #ffffff, #dcdcdc);
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(145deg, #dcdcdc, #ffffff);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+   
+    <div class="overlay"></div>
+    
+    <div class="password-container">
+        <h3>เธอเคยบอกว่า "เราไม่เคยหาเหตุผลที่จะรัก "</h3>
+        <h3>แต่คนเรามักหาเหตุผลตอนที่เลิกกัน</h3>
+        <h2>ใส่รหัสลับเพื่อเข้าสู่ความลับของเรา ❤️</h2>
+        <input type="password" id="password" placeholder="Enter Password">
+        <button class="btn" onclick="checkPassword()">ไปดูเหตุผลกัน</button>
+        <p class="hint">วันสำคัญของเธอ</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            if (password === "24042536") {
+                window.location.href = "onepage.html";
+            } else {
+                alert("รหัสผ่านไม่ถูกต้อง");
+            }
+        }
+    </script>
+</body>
+
+</html>
